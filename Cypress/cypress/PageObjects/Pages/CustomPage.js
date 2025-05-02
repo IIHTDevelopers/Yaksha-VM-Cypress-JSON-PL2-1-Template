@@ -37,6 +37,11 @@ export default class CustomPage {
    * - Useful for navigation in modular or multi-page applications.
    */
   navigateToCustomUrl(relativePath) {
+    const baseUrl = "https://healthapp.yaksha.com";
+    const fullUrl = `${baseUrl}${relativePath}`;
+    cy.visit(fullUrl);
+    cy.wait(2000);
+    console.log(`Navigated to: ${fullUrl}`);
   }
 
   createNewPatient(data) {
